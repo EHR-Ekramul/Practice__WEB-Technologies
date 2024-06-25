@@ -54,7 +54,7 @@
                                 <th><br>Phone/Mobile</th>    <td nowrap><br><?php echo ": ";echo $_POST['mobile']; ?></td>
                               </tr>
                               <tr>
-                                <th><br>Website</th>   <td nowrap><br>: <a href="https://www.ehrmultiverse.com"><?php echo $_POST['website']; ?></a></td>
+                                <th><br>Website</th>   <td nowrap><br>: <?php echo $_POST['website']; ?></a></td>
                               </tr>
                               <tr nowrap>
                                 <th nowrap><br>Present Address</th> <td nowrap><br><?php echo ": ";echo $_POST['present_address'];echo ", ";echo $_POST['post_code'];echo ", ";echo $_POST['city'];echo ", ";echo $_POST['country']; ?></td>
