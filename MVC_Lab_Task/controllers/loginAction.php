@@ -36,13 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $db_status = $userData["status"];
 
         //echo $db_username . $db_password;
-        if ($username === $db_username and $password === $db_password and $db_status == 1) {
-            $_SESSION["loggedIn"] = true;
-            setcookie("user", $db_id, time() + (86400 * 30), "/");
-            header("Location: ../views/dashboard.php");
-        } else if ($db_status == 0) {
+        if ($db_status == 0) {
             $_SESSION['loginStatus'] = "User is deactivated...!";
             header("Location: ../views/login.php");
+        } else if ($username === $db_username and $password === $db_password) {
+            $_SESSION["loggedIn"] = true;
+            setcookie("user", $db_username, time() + (86400 * 30), "/");
+            header("Location: ../views/dashboard.php");
         } else {
             $_SESSION['loginStatus'] = "Wrong username or password...!";
             header("Location: ../views/login.php");
